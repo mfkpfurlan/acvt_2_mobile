@@ -14,4 +14,4 @@ String aboutHobbies =
     "Gosto muito de cozinhar, porem precisa ser para hobby mesmo, com tempo e ambiente bom. Quando cozinho por obrigacao nao me importo muito com tempeiro e apresentacao, apenas foco nos nutrientes.";
 
 String enhancement =
-    "Posso colocar o from em outro arquivo assim como as paginas da minha appBar. Sobre UI vejo que ainda tem bastante chao. A primeira atividade ajudou a entender melhor a hierarquia de widgets do flutter. A segunda atividade me ajudou a me aproveitar mais da documentacao e aprender um pouco de style, mas a tela ainda fica feia. Mesmo sabendo usar todos os widgets da maneira certa, ainda falta um feeling para montar uma boa UI, o que eu nao tenho nem no react hahahaha =(";
+    "Sobre UI vejo que ainda tem bastante chao. A primeira atividade ajudou a entender melhor a hierarquia de widgets do flutter. A segunda atividade me ajudou a me aproveitar mais da documentacao e aprender um pouco de style, mas a tela ainda fica feia. Mesmo sabendo usar todos os widgets da maneira certa, ainda falta um feeling para montar uma boa UI, o que eu nao tenho nem no react hahahaha =(";
