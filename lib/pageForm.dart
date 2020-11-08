@@ -273,6 +273,8 @@ class _PageCreditCardFormState extends State<PageCreditCardForm> {
 
   _saveOnDatabase(CardModel inModel) async {
     var helper = DatabaseHelper.helper;
+    creditCardFormKey.currentState.save();
+    print("$name, $number, $expireOn, $ccv, $ammount"); //
     if (inModel.card.id != null) {
       await helper.updateCard(inModel.card);
     } else {
@@ -281,6 +283,8 @@ class _PageCreditCardFormState extends State<PageCreditCardForm> {
     helper.getCount().then((valor) {
       print("Valor = $valor");
     });
+    print(inModel.card.toMap());
+    print("$name, $number, $expireOn, $ccv, $ammount");
     inModel.loadData();
   }
 
@@ -288,5 +292,6 @@ class _PageCreditCardFormState extends State<PageCreditCardForm> {
     var cards =  await DatabaseHelper.helper.getCardMapList().then((card) {
       print(card);
     });
+    // DatabaseHelper.helper.clearTable();
   }
 }

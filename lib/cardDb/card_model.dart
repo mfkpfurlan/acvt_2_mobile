@@ -4,7 +4,7 @@ import 'package:scoped_model/scoped_model.dart';
 
 class CardModel extends Model {
   int _stackIndex = 0;
-  Card _card = Card("", 0, "", 0);
+  Card _card = Card("", "", "", "");
   List cardList = [];
 
   get stackIndex => _stackIndex;

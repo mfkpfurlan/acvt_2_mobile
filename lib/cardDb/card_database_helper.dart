@@ -2,6 +2,7 @@ import "dart:io";
 import 'package:actv2_form/cardDb/card.dart';
 import "package:sqflite/sqflite.dart";
 import "package:path_provider/path_provider.dart";
+import "package:flutter/foundation.dart";
 
 
 class DatabaseHelper {
@@ -31,7 +32,7 @@ class DatabaseHelper {
     Directory directory = await getApplicationDocumentsDirectory();
     String path = directory.path + "cards.db";
 
-    var cardsDatabase = await openDatabase(path, version: 1, onCreate: _createDb);
+    var cardsDatabase = await openDatabase(path, version: 2, onCreate: _createDb);
 
     return cardsDatabase;
   }
@@ -39,7 +40,7 @@ class DatabaseHelper {
   //create table
   _createDb(Database db, int newVersion) async {
     await db.execute(
-      "CREATE TABLE $cardTable ($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colName text, $colNumber INTEGER, $colExpireOn text, $colCcv INTEGER)"
+      "CREATE TABLE $cardTable ($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colName text, $colNumber text, $colExpireOn text, $colCcv text)"
       );
   }
 
@@ -101,4 +102,15 @@ class DatabaseHelper {
     int result = Sqflite.firstIntValue(count);
     return result;
   }
+
+  //clear database
+  clearTable() async {
+    Database db = await this.database;
+    int result = await db.rawDelete(
+      "DELETE FROM $cardTable"
+    );
+    debugPrint("$cardTable CLEARED");
+    return result;
+  }
+
 }

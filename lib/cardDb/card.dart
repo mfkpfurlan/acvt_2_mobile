@@ -2,9 +2,9 @@ class Card{
   //attr, getters, setters, toMap()
   int _id;
   String _name;
-  int _number;
+  String _number;
   String _expireOn;
-  int _ccv;
+  String _ccv;
 
   Card(this._name, this._number, this._expireOn, this._ccv);
 
@@ -20,9 +20,9 @@ class Card{
 
   int get id => _id;
   String get name => _name;
-  int get number => _number;
+  String get number => _number;
   String get expireOn => _expireOn;
-  int get ccv => _ccv;
+  String get ccv => _ccv;
 
   set name(String name) {
     if (name.length > 0) {
@@ -30,8 +30,8 @@ class Card{
     }
   }
 
-  set number(int number) {
-    if (number > 0) {
+  set number(String number) {
+    if (number.length > 0) {
       this._number = number;
     }
   }
@@ -42,8 +42,8 @@ class Card{
     }
   }
 
-  set ccv(int ccv) {
-    if (ccv > 0) {
+  set ccv(String ccv) {
+    if (ccv.length > 0) {
       this._ccv = ccv;
     }
   }
